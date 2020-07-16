@@ -26,20 +26,14 @@ namespace sdds {
 		// if m_cargo >= m_capactiy return false
 		if (m_cargo >= m_capacity) {
 			result = false;
-		}
-		else if (cargo > m_capacity) {
-			// If new cargo is greater than capacity
-			// set m_cargo to m_capacity
-			m_cargo = m_capacity;
-			
-			// Return true.
-			result = true;
-		}
-		else if (cargo < m_capacity) {
-			// if new cargo is not greater than capacity
-			// increase m_cargo by cargo
-			m_cargo += cargo;
-			
+		} else {
+			if ((cargo + m_cargo) > m_capacity) {
+				// If new cargo is greater than capacity
+				// set m_cargo to m_capacity
+				m_cargo = m_capacity;
+			} else {
+				m_cargo += cargo;
+			}
 			// return true
 			result = true;
 		}
@@ -56,7 +50,7 @@ namespace sdds {
 
 	ostream& Truck::write(ostream& os) const {
 		MotorVehicle::write(os);
-		os << "| ";
+		os << " | ";
 		// Print the current cargo:
 		os << m_cargo;
 		os << "/";
