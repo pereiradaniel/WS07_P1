@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <cstring>
 #include "Truck.h"
@@ -65,7 +66,7 @@ namespace sdds {
 	};
 
 	istream& Truck::read(istream& in) {
-		Truck::read(in);
+		MotorVehicle::read(in);
 		int capacity;		// Holds capacity.
 		int cargo;			// Holds cargo.
 
