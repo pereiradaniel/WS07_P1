@@ -67,18 +67,18 @@ namespace sdds {
 
 	istream& Truck::read(istream& in) {
 		MotorVehicle::read(in);
-		int capacity;		// Holds capacity.
-		int cargo;			// Holds cargo.
+		//double capacity;		// Holds capacity.
+		//double cargo;			// Holds cargo.
 
 		// print the prompt
 		cout << "Capacity: ";
 		// read the year
-		in >> capacity;
+		in >> m_capacity;
 
 		// print the prompt
 		cout << std::endl << "Cargo: ";
 		// read the license plate
-		in >> cargo;
+		in >> m_cargo;
 
 		return in;
 	};
