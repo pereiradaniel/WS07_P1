@@ -59,7 +59,7 @@ namespace sdds {
 		os << "| ";
 		// Print the current cargo:
 		os << m_cargo;
-		os << " | ";
+		os << "/";
 		// Print the capacity:
 		os << m_capacity;
 		return os;
@@ -76,7 +76,7 @@ namespace sdds {
 		in >> m_capacity;
 
 		// print the prompt
-		cout << std::endl << "Cargo: ";
+		cout << "Cargo: ";
 		// read the license plate
 		in >> m_cargo;
 

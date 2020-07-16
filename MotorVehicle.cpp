@@ -22,26 +22,20 @@ namespace sdds {
 		if (address != m_currentAddress) {
 			cout << "|";
 			// setup output width as 10, set up right allignment print license plate
-			std::cout << fixed;
-			std::cout << std::setprecision(10);
-			std::cout << std::right;
-			cout << m_licensePlate << "| ";
+			std::cout.width(10);
+			std::cout << std::right << m_licensePlate;
+			std::cout << "| |";
 			// setup output width as 20, set up right alignment and print the current address
-			std::cout << std::setprecision(20);
-			std::cout << std::right;
-			cout << m_currentAddress
-				<< " --->--- ";
+			std::cout.width(20);
+			std::cout << std::right << m_currentAddress;
+			std::cout << " --->--- ";
 			// setup output width as 20, set up left alignment and print the new address
-			std::cout << std::setprecision(20);
-			std::cout << std::left;
-			cout << m_currentAddress << " |\n";
+			std::cout.width(20);
+			std::cout << std::left << address;
+			std::cout << "|" <<std::endl;
 
 			// replace the address
 			strcpy(m_currentAddress, address);
-
-			// Reset display properties:
-			std::cout << std::setprecision(6);
-			std::cout << right;
 		}
 	}
 
@@ -52,29 +46,25 @@ namespace sdds {
 		os << " | ";
 		// Print the license plate:
 		os << m_licensePlate;
-		os << " | | ";
+		os << " | ";
 		// print the address
 		os << m_currentAddress;
 		return os;
 	}
 
 	istream& MotorVehicle::read(istream& in) {
-		//int year;			// Holds year.
-		//int licensePlate;	// Holds license plate.
-		//char address[64];
-
 		// print the prompt
 		cout << "Built year: ";
 		// read the year
 		in >> m_year;
 		
 		// print the prompt
-		cout << std::endl << "License plate: ";
+		cout << "License plate: ";
 		// read the license plate
 		in >> m_licensePlate;
 
 		// print the prompt
-		cout << std::endl << "Current location: ";
+		cout << "Current location: ";
 		// read the address
 		in >> m_currentAddress;
 
