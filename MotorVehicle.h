@@ -19,7 +19,7 @@ namespace sdds
 	};
 
 	std::istream& operator>>(std::istream& in, MotorVehicle& v);		// duplicates read()
-	std::ostream& operator<<(std::ostream& os, const MotorVehicle& v);	// duplicates write()
+	std::ostream& operator<<(std::ostream& out, const MotorVehicle& v);	// duplicates write()
 }
 
 #endif

@@ -80,8 +80,8 @@ namespace sdds {
 		return in;
 	}
 
-	ostream& operator<<(ostream& os, const MotorVehicle& theVehicle) {
-		return theVehicle.write(os);
+	ostream& operator<<(ostream& out, const MotorVehicle& theVehicle) {
+		return theVehicle.write(out);
 	}
 
 	istream& operator>>(istream& in, MotorVehicle& theVehicle) {

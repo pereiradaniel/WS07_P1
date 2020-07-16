@@ -81,4 +81,14 @@ namespace sdds {
 
 		return in;
 	};
+	
+	istream& operator>>(istream& in, Truck& c) {
+		return c.read(in);
+	}
+
+	ostream& operator<<(ostream& out, const Truck& c) {
+		return c.write(out);
+	}
+
+	
 }
